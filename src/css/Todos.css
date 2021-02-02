@@ -1,0 +1,34 @@
+.todo-inputs > form {
+  margin: auto;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.todo-inputs > form > input {
+  border: none;
+  font-size: 1.5rem;
+  padding: 15px;
+  flex: 0.9;
+}
+
+.todo-inputs > form > button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  padding: 10px;
+  font-size: 1.5rem;
+  flex: 0.1;
+}
+
+.todos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}

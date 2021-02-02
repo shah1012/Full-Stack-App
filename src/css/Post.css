@@ -1,0 +1,17 @@
+.post {
+  padding: 10px;
+  margin: 10px;
+  width: fit-content;
+  background-color: #e9e9eb !important;
+}
+
+.post > p {
+  font-size: 1.5em;
+}
+
+.post__user {
+  margin-left: auto;
+  color: white;
+  text-align: left !important;
+  background-color: #0b81ff !important;
+}

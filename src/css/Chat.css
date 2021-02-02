@@ -1,0 +1,38 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.messages {
+  height: 80vh;
+  width: 100%;
+  background-color: aliceblue;
+  overflow-y: scroll;
+}
+
+.inputs > form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputs > form > input {
+  border: none;
+  font-size: 1.5rem;
+  padding: 15px;
+  flex: 0.9;
+}
+
+.inputs > form > button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  font-size: 1.5rem;
+  flex: 0.1;
+}
