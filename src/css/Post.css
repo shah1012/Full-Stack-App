@@ -3,6 +3,7 @@
   margin: 10px;
   width: fit-content;
   background-color: #e9e9eb !important;
+  border-radius: 20px;
 }
 
 .post > p {
@@ -14,4 +15,5 @@
   color: white;
   text-align: left !important;
   background-color: #0b81ff !important;
+  border-radius: 20px;
 }

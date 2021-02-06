@@ -22,11 +22,13 @@ function Home() {
       db.collection("users")
         .doc(user.uid)
         .onSnapshot((doc) => {
-          const data = doc.data();
-          const post = data.data;
+          if (doc.exists) {
+            const data = doc.data();
+            const post = data.data;
 
-          setUserData(data);
-          setUserPosts(post);
+            setUserData(data);
+            setUserPosts(post);
+          }
         });
     };
     fetchData();

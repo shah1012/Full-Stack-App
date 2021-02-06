@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import GoogleSign from "../components/GoogleSignIn";
 import "../css/Login.css";
 import Obj from "../Firebase-Files/Firebase";
 const { db, auth } = Obj;
@@ -114,6 +115,7 @@ function Login() {
 
               {/* sign up */}
               <button onClick={handleSignup}>Sign up</button>
+              <GoogleSign />
 
               <div className="pTags">
                 <p>

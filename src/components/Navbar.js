@@ -38,10 +38,7 @@ function Navbar() {
                 className={item.cName}
                 style={{ animation: "navLinkFade 0.5s ease forwards" }}
               >
-                <Link to={item.path}>
-                  {item.icon}
-                  <span>{item.title}</span>
-                </Link>
+                <Link to={item.path}>{item.icon}</Link>
               </li>
             );
           }

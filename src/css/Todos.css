@@ -10,6 +10,8 @@
   font-size: 1.5rem;
   padding: 15px;
   flex: 0.9;
+  background-color: rgba(31, 37, 46, 0.9);
+  color: white;
 }
 
 .todo-inputs > form > button {

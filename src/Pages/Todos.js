@@ -8,8 +8,7 @@ import { todoContext } from "../contexts/todoContext";
 
 function Todos() {
   const [todo, setTodo] = useState("");
-  const [todos, setTodos, addTodo] = useContext(todoContext);
-  const [user, userData] = useContext(userContext);
+  const [todos, , addTodo] = useContext(todoContext);
 
   const add = (e) => {
     e.preventDefault();
@@ -35,8 +34,8 @@ function Todos() {
 
       <div className="todos">
         <ul className="todo-list">
-          {todos.map((todo, index) => (
-            <Todo key={index} todo={todo.todo} completed={todo.completed} />
+          {todos.map(({ id, todo }) => (
+            <Todo todo={todo.task} key={id} id={id} />
           ))}
         </ul>
       </div>

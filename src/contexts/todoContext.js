@@ -8,29 +8,46 @@ export const TodoProvider = (props) => {
   const [user, userData, db] = useContext(userContext);
 
   useEffect(() => {
-    userData().then((doc) => {
-      const docData = doc.data();
-      const docTodos = docData.todos;
-      setTodos(docTodos);
-    });
+    db.collection("users")
+      .doc(user.uid)
+      .collection("todos")
+      .onSnapshot((snapshot) => {
+        setTodos(
+          snapshot.docs.map((doc) => ({ id: doc.id, todo: doc.data() }))
+        );
+      });
   }, []);
 
   const addTodo = (todoText, completed) => {
-    db.collection("users")
-      .doc(user.uid)
-      .update({
-        todos: [...todos, { todo: todoText, completed: completed }],
-      });
-    setTodos((prevTodos) => [
-      ...prevTodos,
-      { todo: todoText, completed: completed },
-    ]);
+    db.collection("users").doc(user.uid).collection("todos").add({
+      task: todoText,
+      completed: completed,
+    });
   };
 
-  const removeTodo = todoText;
+  const completedTodo = (todoId, completed) => {
+    console.log(completed);
+    db.collection("users")
+      .doc(user.uid)
+      .collection("todos")
+      .doc(todoId)
+      .update({
+        completed: completed,
+      });
+  };
+
+  const removeTodo = (todoId) => {
+    db.collection("users")
+      .doc(user.uid)
+      .collection("todos")
+      .doc(todoId)
+      .delete();
+  };
 
   return (
-    <todoContext.Provider value={[todos, setTodos, addTodo]}>
+    <todoContext.Provider
+      value={[todos, setTodos, addTodo, removeTodo, completedTodo]}
+    >
       {props.children}
     </todoContext.Provider>
   );
