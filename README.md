@@ -1,4 +1,4 @@
-#Full Stack Web App Using Firebase and React
+# Full Stack Web App Using Firebase and React
 
 Hey there this is my first attempt of buuilding a full stack react app 
 
